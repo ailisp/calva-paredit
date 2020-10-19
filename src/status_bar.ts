@@ -1,10 +1,10 @@
 'use strict';
-import { window, StatusBarAlignment, StatusBarItem } from 'vscode';
+import { window, workspace, StatusBarAlignment, StatusBarItem } from 'vscode';
 
-const activeColour = "white";
-const inactiveColour = "#b3b3b3";
-
-const colour = { "active": "white", "inactive": "#b3b3b3" };
+const colour = {
+    "active": workspace.getConfiguration().get('paredit.iconEnabledColor'),
+    "inactive": workspace.getConfiguration().get('paredit.iconDisabledColor')
+};
 
 export class StatusBar {
 
